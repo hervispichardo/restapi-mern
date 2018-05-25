@@ -3,6 +3,7 @@ import user from './user'
 import auth from './auth'
 import passwordReset from './password-reset'
 import teams from './teams'
+import votes from './votes'
 
 const router = new Router()
 
@@ -33,5 +34,6 @@ router.use('/users', user)
 router.use('/auth', auth)
 router.use('/password-resets', passwordReset)
 router.use('/teams', teams)
+router.use('/votes', votes)
 
 export default router

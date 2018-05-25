@@ -75,7 +75,18 @@ router.put('/:id',
   body({ name, code, votes }),
   update)
 
-
+/**
+ * @api {put} /teams/increase/:id Update votes teams
+ * @apiName UpdateVotesTeams
+ * @apiGroup Teams
+ * @apiPermission master
+ * @apiParam {String} access_token master access token.
+ * @apiParam id Teams's id.
+ * @apiSuccess {Object} teams Teams's data.
+ * @apiError {Object} 400 Some parameters may contain invalid values.
+ * @apiError 404 Teams not found.
+ * @apiError 401 master access only.
+ */
 router.post('/increase/:id',
 master(),
 increase)

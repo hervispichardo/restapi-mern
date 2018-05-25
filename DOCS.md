@@ -17,6 +17,7 @@
 	- [Delete teams](#delete-teams)
 	- [Retrieve teams](#retrieve-teams)
 	- [Update teams](#update-teams)
+	- [Update votes teams](#update-votes-teams)
 	
 - [User](#user)
 	- [Create user](#create-user)
@@ -26,6 +27,12 @@
 	- [Retrieve users](#retrieve-users)
 	- [Update password](#update-password)
 	- [Update user](#update-user)
+	
+- [Votes](#votes)
+	- [Create votes](#create-votes)
+	- [Delete votes](#delete-votes)
+	- [Retrieve votes](#retrieve-votes)
+	- [Update votes](#update-votes)
 	
 
 
@@ -175,6 +182,20 @@
 | code			| 			|  <p>Teams's code.</p>							|
 | votes			| 			|  <p>Teams's votes.</p>							|
 
+## Update votes teams
+
+
+
+	PUT /teams/increase/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>master access token.</p>							|
+| id			| 			|  <p>Teams's id.</p>							|
+
 # User
 
 ## Create user
@@ -278,5 +299,69 @@
 | access_token			| String			|  <p>User access_token.</p>							|
 | name			| String			| **optional** <p>User's name.</p>							|
 | picture			| String			| **optional** <p>User's picture.</p>							|
+
+# Votes
+
+## Create votes
+
+
+
+	POST /votes
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>master access token.</p>							|
+| user			| 			|  <p>Votes's user.</p>							|
+| username			| 			|  <p>Votes's username.</p>							|
+| email			| 			|  <p>Votes's email.</p>							|
+
+## Delete votes
+
+
+
+	DELETE /votes/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>master access token.</p>							|
+
+## Retrieve votes
+
+
+
+	GET /votes
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| q			| String			| **optional** <p>Query to search.</p>							|
+| page			| Number			| **optional** <p>Page number.</p>							|
+| limit			| Number			| **optional** <p>Amount of returned items.</p>							|
+| sort			| String[]			| **optional** <p>Order of returned items.</p>							|
+| fields			| String[]			| **optional** <p>Fields to be returned.</p>							|
+
+## Update votes
+
+
+
+	PUT /votes/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>master access token.</p>							|
+| user			| 			|  <p>Votes's user.</p>							|
+| username			| 			|  <p>Votes's username.</p>							|
+| email			| 			|  <p>Votes's email.</p>							|
 
 
