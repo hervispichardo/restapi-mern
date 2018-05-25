@@ -10,7 +10,7 @@ const router = new Router()
 const { name, code, votes } = schema.tree
 
 const orderByVotes = new Schema({
-  sort: 'votes', // shorthand to { type: String, default: '-createdAt' }
+  sort: '-votes', // shorthand to { type: String, default: '-createdAt' }
 });
 
 /**
