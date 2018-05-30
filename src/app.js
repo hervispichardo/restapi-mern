@@ -7,6 +7,19 @@ import api from './api'
 const app = express(apiRoot, api)
 const server = http.createServer(app)
 
+const io = require('socket.io').listen(server);
+
+io.on('connection', client => {
+  console.log("a client connected")
+
+  client.on('new-vote', data => {
+    console.log("new-vote: ", data);
+  });
+  client.on('disconnect', () =>{
+    console.log("disconnect");
+  });
+});
+
 mongoose.connect(mongo.uri, { useMongoClient: true })
 mongoose.Promise = Promise
 
